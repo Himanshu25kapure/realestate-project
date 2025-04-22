@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Real Estate</title>
+    <link rel="stylesheet" href="realestate.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">🏠 Real Estate</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact.html" target="_blank">Contact</a></li>
+            <li><a href="login.html" target="_blank">Login</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>We are a leading real estate platform helping buyers and sellers connect across India with trusted listings and services.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Real Estate. All rights reserved. | <a href="contact.html" target="_blank">Contact Us</a></p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

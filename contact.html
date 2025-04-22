@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Get in touch with Real Estate for all your queries. Contact us for buying, selling, or renting properties.">
+    <meta name="author" content="Your Name or Real Estate Company">
+    <title>Contact Us - Real Estate</title>
+    <link rel="stylesheet" href="realestate.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="logo">🏠 Real Estate</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" target="_blank">Login</a></li>
+        </ul>
+    </nav>
+
+    <main class="contact" role="main">
+        <h2>Contact Us</h2>
+        <p>Have any questions or want to inquire about a property? Reach out to us, and we’ll be happy to assist you.</p>
+        <p>Feel free to fill out the contact form below or use the contact details provided.</p>
+
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Real Estate. All rights reserved. | <a href="about.html">About Us</a></p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

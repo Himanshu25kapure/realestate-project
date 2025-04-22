@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Explore details about our premium luxury villa in Whitefield, Bangalore. Real Estate listings with modern amenities.">
+    <meta name="author" content="Your Name or Real Estate Company">
+    <title>Property Details - Real Estate</title>
+    <link rel="stylesheet" href="realestate.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="logo">🏠 Real Estate</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" target="_blank">About</a></li>
+            <li><a href="contact.html" target="_blank">Contact</a></li>
+            <li><a href="login.html" target="_blank">Login</a></li>
+        </ul>
+    </nav>
+
+    <main id="property-detail" class="property-detail" role="main">
+        <h2>Property Details</h2>
+        <img src="" alt="Image of Luxury Villa in Bangalore">
+        <p><strong>Title:</strong> Luxury Villa in Bangalore</p>
+        <p><strong>Price:</strong> ₹1.5Cr</p>
+        <p><strong>Location:</strong> Whitefield, Bangalore</p>
+        <p><strong>Description:</strong> This stunning villa features spacious rooms, a modern kitchen, a garden, and a private swimming pool.</p>
+        <a href="contact.html" class="detail-btn">Contact Agent</a>
+    </main>
+
+    <!-- Property Ratings and Reviews Section -->
+    <section id="reviews" class="reviews">
+        <h3>Ratings and Reviews</h3>
+
+        <!-- Review Form -->
+        <div class="review-form">
+            <label for="rating">Rating:</label>
+            <select id="rating">
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select>
+            <br>
+            <label for="review-text">Review:</label>
+            <textarea id="review-text" placeholder="Write your review..."></textarea>
+            <br>
+            <button onclick="submitReview()">Submit Review</button>
+        </div>
+
+        <!-- Display Reviews -->
+        <div id="reviews-list" class="reviews-list">
+            <!-- Reviews will be shown here -->
+        </div>
+    </section>
+
+    <script>
+        // Function to submit a review
+        function submitReview() {
+            const rating = document.getElementById('rating').value;
+            const reviewText = document.getElementById('review-text').value;
+
+            if (reviewText.trim() === "") {
+                alert("Please write a review!");
+                return;
+            }
+
+            // Create review object
+            const review = {
+                rating: rating,
+                text: reviewText,
+                date: new Date().toLocaleString(),
+            };
+
+            // Retrieve existing reviews from localStorage
+            let reviews = JSON.parse(localStorage.getItem('propertyReviews')) || [];
+
+            // Add the new review to the reviews array
+            reviews.push(review);
+
+            // Save the updated reviews array back to localStorage
+            localStorage.setItem('propertyReviews', JSON.stringify(reviews));
+
+            // Clear the review form
+            document.getElementById('review-text').value = "";
+
+            // Display the updated reviews
+            displayReviews();
+        }
+
+        // Function to display reviews
+        function displayReviews() {
+            const reviews = JSON.parse(localStorage.getItem('propertyReviews')) || [];
+            const reviewsList = document.getElementById('reviews-list');
+
+            // Clear previous reviews
+            reviewsList.innerHTML = "";
+
+            // Display all reviews
+            reviews.forEach(review => {
+                const reviewDiv = document.createElement('div');
+                reviewDiv.classList.add('review-item');
+
+                // Display rating and review
+                reviewDiv.innerHTML = `
+                    <div class="rating">${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</div>
+                    <p>${review.text}</p>
+                    <small>Reviewed on ${review.date}</small>
+                `;
+                
+                reviewsList.appendChild(reviewDiv);
+            });
+
+            calculateAverageRating();
+        }
+
+        // Function to calculate the average rating
+        function calculateAverageRating() {
+            const reviews = JSON.parse(localStorage.getItem('propertyReviews')) || [];
+            const totalRatings = reviews.reduce((acc, review) => acc + parseInt(review.rating), 0);
+            const averageRating = totalRatings / reviews.length;
+            
+            // Display average rating (round to 1 decimal place)
+            if (reviews.length > 0) {
+                document.getElementById('average-rating').innerText = averageRating.toFixed(1);
+            } else {
+                document.getElementById('average-rating').innerText = '0';
+            }
+        }
+
+        // Load the reviews and average rating when the page loads
+        window.onload = function() {
+            displayReviews();
+        };
+    </script>
+    <footer>
+        <p>&copy; 2025 Real Estate. All rights reserved. | <a href="contact.html" target="_blank">Contact Us</a></p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

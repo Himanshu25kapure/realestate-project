@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Login to your account for Real Estate services. Access your saved properties and make transactions with ease.">
+    <meta name="author" content="Your Name or Real Estate Company">
+    <title>Login - Real Estate</title>
+    <link rel="stylesheet" href="realestate.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="logo">🏠 Real Estate</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <main class="auth" role="main">
+        <h2>Login</h2>
+        <p>Welcome back! Please enter your credentials to access your account.</p>
+        
+        <form action="#" method="POST" class="auth-form">
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        
+        <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Real Estate. All rights reserved. | <a href="about.html">About Us</a></p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
