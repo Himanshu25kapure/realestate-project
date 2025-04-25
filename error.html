@@ -1,279 +1,379 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Buy the best property in Mumbai, Pune, and Bangalore. Buy Directly from Builders. No brokerage and bottom rate policy. Home Buying Simplified by Housiey.">
-  <title>Buy Best Property in Mumbai | Pune | Bangalore - Housiey.com</title>
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #f2f5f5; color: #223a53; }
-    header { background: #fff; height: 70px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.03); padding: 0 40px; }
-    .logo { height: 38px; }
-    .menu { font-size: 18px; color: #706a68; text-decoration: none; margin-left: 20px; }
-    .cities-popup { background: #fff; border-radius: 16px; box-shadow: 0 6px 24px 0 rgba(34,58,83,0.14); width: 760px; max-width: 95vw; padding: 28px 16px 24px 16px; margin: 40px auto -48px auto; position: relative; top: 0; z-index: 2; }
-    .cities-title { text-align: center; font-size: 26px; font-weight: 700; margin-bottom: 22px; letter-spacing: .7px; }
-    .cities-list { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
-    .city-card { background: #f2f5f5; border-radius: 12px; box-shadow: 0 2px 6px 0 rgba(34,58,83,0.11); width: 170px; height: 104px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: box-shadow .2s; }
-    .city-card:hover { box-shadow: 0 6px 18px 0 rgba(50, 173, 217, .17); }
-    .city-img { width: 70px; height: 50px; margin-bottom: 7px; }
-    .city-name { font-size: 18px; color: #223a53; font-weight: 600; }
-    .sign-up-perks-section { background: #223a53; padding: 46px 0 46px 0; text-align: center; }
-    .perks-title { color: #fff; font-size: 23px; font-weight: 700; letter-spacing: .7px; margin-bottom: 16px; }
-    .perks-row { display: flex; justify-content: center; gap: 26px; max-width: 1150px; margin: 0 auto; flex-wrap: wrap; }
-    .perk-card { background: #fff; border-radius: 10px; box-shadow: 0 6px 12px 0 rgba(34,58,83,0.09); width: 240px; min-height: 155px; padding: 26px 16px 18px; display: flex; flex-direction: column; align-items: center; }
-    .perk-icon { width: 42px; height: 42px; margin-bottom: 11px; }
-    .perk-heading { color: #223a53; font-size: 17px; font-weight: 700; margin-bottom: 8px; }
-    .perk-desc { font-size: 15px; color: #706a68; }
-    .sign-up-box { background: #fff; margin: -30px auto 16px auto; padding: 25px 22px; border-radius: 14px; box-shadow: 0 4px 15px 0 rgba(34,58,83,0.10); width: 460px; max-width: 90vw; display: flex; align-items: center; }
-    .sign-up-box input { border: 1.2px solid #b9c6cd; border-radius: 7px; outline: none; padding: 12px 14px; font-size: 16px; flex: 1; margin-right: 14px; }
-    .sign-up-btn { background: #32add9; color: #fff; border: none; border-radius: 6px; padding: 12px 26px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
-    .sign-up-btn:hover { background: #114a71; }
-    @media(max-width:1010px){.perks-row{flex-direction: column;align-items: center;} .perks-title {font-size: 19px}}
-    @media(max-width:800px){.cities-popup{width:96vw;} .sign-up-box{width:96vw;} .perk-card {width:95vw; max-width:350px;} }
-    @media(max-width:650px){header{padding:0 9px;} .cities-popup{padding:18px 2px 16px 2px;} }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="https://ext.same-assets.com/1278354859/2289884721.png" alt="Housiey logo" class="logo">
-    <nav>
-      <a class="menu" href="#">Sign Up</a>
-      <a class="menu" href="#">
-        <svg width="28" height="28" fill="#223a53" viewBox="0 0 24 24">
-          <rect width="24" height="3"></rect>
-          <rect y="8" width="24" height="3"></rect>
-          <rect y="16" width="24" height="3"></rect>
-        </svg>
-      </a>
-    </nav>
-  </header>
-  <div class="cities-popup">
-    <div class="cities-title">Cities</div>
-    <div class="cities-list">
-      <div class="city-card"><img class="city-img" src="https://ext.same-assets.com/1278354859/809981740.svg" alt="Pune city icon"><div class="city-name">Pune</div></div>
-      <div class="city-card"><img class="city-img" src="https://ext.same-assets.com/1278354859/1223152466.svg" alt="Mumbai city icon"><div class="city-name">Mumbai</div></div>
-      <div class="city-card"><img class="city-img" src="https://ext.same-assets.com/1278354859/3319134659.svg" alt="Thane city icon"><div class="city-name">Thane</div></div>
-      <div class="city-card"><img class="city-img" src="https://ext.same-assets.com/1278354859/1585673028.svg" alt="Bangalore city icon"><div class="city-name">Bangalore</div></div>
-      <div class="city-card"><img class="city-img" src="https://ext.same-assets.com/1278354859/809981740.svg" alt="Ahmedabad city icon"><div class="city-name">Ahmedabad</div></div>
-      <div class="city-card"><img class="city-img" src="https://ext.same-assets.com/1278354859/2652140977.svg" alt="Hyderabad city icon"><div class="city-name">Hyderabad</div></div>
-      <div class="city-card"><img class="city-img" src="https://ext.same-assets.com/1278354859/1223152466.svg" alt="Gurugram city icon"><div class="city-name">Gurugram</div></div>
-    </div>
-  </div>
-  <div class="sign-up-perks-section">
-    <div class="perks-title">Sign Up Perks</div>
-    <div class="perks-row">
-      <div class="perk-card"><img class="perk-icon" src="https://ext.same-assets.com/1278354859/809981740.svg" alt=""><div class="perk-heading">Referral Bonus</div><div class="perk-desc">Refer Housiey & get bonus up to 2 lac.<br> Get Referral Bonus amount directly credited to your account.</div></div>
-      <div class="perk-card"><img class="perk-icon" src="https://ext.same-assets.com/1278354859/2652140977.svg" alt=""><div class="perk-heading">Free Site Visit</div><div class="perk-desc">Get Free Pickup & Drop for unlimited projects in the entire city.</div></div>
-      <div class="perk-card"><img class="perk-icon" src="https://ext.same-assets.com/1278354859/1585673028.svg" alt=""><div class="perk-heading">Bottom Rate Guarantee</div><div class="perk-desc">Rock Bottom Prices Guaranteed. Instant refund in price difference (get double the discount from us).</div></div>
-      <div class="perk-card"><img class="perk-icon" src="https://ext.same-assets.com/1278354859/1223152466.svg" alt=""><div class="perk-heading">Relationship Manager</div><div class="perk-desc">Get personalized RM managing everything from site visit to booking.</div></div>
-    </div>
-  </div>
-  <div class="sign-up-box">
-    <form style="display: flex; align-items: center; width: 100%;">
-      <input type="tel" placeholder="Phone Number" required>
-      <button class="sign-up-btn" type="submit">Sign Up</button>
-    </form>
-  </div>
-  <!-- More sections such as Offers, Media Mentions, Site Visit, and Features can be added below as needed. -->
-</body>
-</html>
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links li a {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  padding: 3rem 2rem;
+  color: white;
+  text-align: center;
+}
+.search-bar {
+  padding: 0.75rem;
+  width: 60%;
+  max-width: 500px;
+  margin: 1rem auto;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.filters select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Cities Section */
+.cities-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem 0 1rem;
+  font-weight: bold;
+}
+.cities-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.city-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 120px;
+}
+.city-img {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+}
+.city-name {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+/* Perks Section */
+.sign-up-perks-section {
+  background-color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+.perks-title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+.perks-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.perk-card {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 250px;
+  text-align: center;
+}
+.perk-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1rem;
+}
+.perk-heading {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Sign-Up Section */
+.sign-up-container {
+  padding: 2rem;
+  background-color: #e6f7ff;
+  text-align: center;
+}
+.sign-up-heading {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+.sign-up-box form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.sign-up-box input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+.sign-up-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #0072ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Property Sections */
+.property-section {
+  padding: 2rem;
+  background-color: #fff;
+}
+.property-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.properties {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.property-card {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.property-card img {
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.detail-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #0072ff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Banner Section */
+.image-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Final Banner */
+.banner-wrapper {
+  position: relative;
+  margin: 2rem 0;
+}
+.banner-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.banner-text {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  color: white;
+  max-width: 500px;
+}
+.banner-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.banner-text p {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.banner-action {
+  background-color: #ff6600;
+  padding: 0.75rem 1.25rem;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Features Section */
+.features-section {
+  background-color: #f2f2f2;
+  padding: 2rem;
+}
+.features-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.feature-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 280px;
+  text-align: center;
+}
+.feature-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+/* Brands Section */
+.brands-section {
+  background-color: #fff;
+  padding: 2rem;
+}
+.brands-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.brands-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.brand-card img {
+  max-height: 80px;
+  object-fit: contain;
+}
+.brand-card {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.brand-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.footer-logo {  
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.footer-logo img {
+  width: 50px;
+  height: auto;
+  margin-right: 0.5rem;
+}
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+.footer-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+.footer-nav ul li a:hover {
+  text-decoration: underline;
+}
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem; 
+}
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us - Housiey</title>
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #f2f5f5; color: #223a53; }
-    header { background: #fff; height: 70px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.03); padding: 0 40px; }
-    .logo { height: 38px; }
-    .menu { font-size: 18px; color: #706a68; text-decoration: none; margin-left: 20px; }
-    .about-section { max-width: 850px; background: #fff; border-radius: 14px; padding: 36px 32px; margin: 50px auto 0 auto; box-shadow: 0 2px 10px 0 rgba(34,58,83,0.10); }
-    .about-title { font-size: 27px; font-weight: 700; margin-bottom: 22px; letter-spacing: .7px; text-align: left; }
-    .about-desc { font-size: 17px; color: #223a53; margin-bottom: 20px; line-height: 1.56; }
-    .about-sub { font-size: 22px; font-weight: 600; color: #32add9; margin-bottom: 12px; }
-    .about-list { margin-bottom: 28px; }
-    .about-list li { font-size: 16px; color: #706a68; margin-bottom: 8px; }
-    .about-facts { display: flex; gap: 40px; flex-wrap: wrap; justify-content: left; margin-top: 16px; }
-    .fact { background: #f2f5f5; padding: 20px 20px; border-radius: 12px; box-shadow: 0 1px 5px rgba(50, 173, 217, .07); min-width: 130px; text-align: center; font-size: 18px; margin-bottom: 10px; }
-    .fact strong { font-size: 26px; color: #32add9; }
-    footer { background: #223a53; color: #fff; padding: 26px 0 17px; margin-top: 48px; text-align: center; font-size: 16px; }
-    @media(max-width:700px){ .about-section{padding:18px 5vw;} .about-title{font-size:20px;} .about-facts{flex-direction:column;gap:10px;}.fact{min-width:unset;width:100%;} header{padding: 0 9px;} }
-  </style>
-</head>
-<body>
-  <header>
-    <a href="index.html"><img src="https://ext.same-assets.com/1278354859/2289884721.png" alt="Housiey logo" class="logo"></a>
-    <nav>
-      <a class="menu" href="projects.html">Projects</a>
-      <a class="menu" href="about.html">About Us</a>
-      <a class="menu" href="contact.html">Contact</a>
-      <a class="menu" href="#">Sign Up</a>
-    </nav>
-  </header>
-  <section class="about-section">
-    <div class="about-title">About Housiey</div>
-    <div class="about-desc">
-      Housiey is dedicated to making property buying in Mumbai, Pune, Bangalore, and beyond transparent, hassle-free, and rewarding. We connect buyers directly with top builders—no brokers, no hidden costs. Our expert team helps you discover, tour, and secure your dream home with confidence and ease, always guaranteeing the bottom rate.<br /><br />
-      <span class="about-sub">Mission</span><br />
-      <ul class="about-list"><li>To empower home buyers with information and confidence at every step.</li><li>To streamline property transactions, ensuring the best rates and transparent deals.</li></ul>
-      <span class="about-sub">Vision</span><br />
-      <ul class="about-list"><li>To set the benchmark for reliability and innovation in Indian real estate services.</li><li>To make home-buying a celebration, not a challenge.</li></ul>
-    </div>
-    <div class="about-facts">
-      <div class="fact"><strong>8+</strong><br>Years Experience</div>
-      <div class="fact"><strong>70,000+</strong><br>Site Visits</div>
-      <div class="fact"><strong>5,500+</strong><br>Happy Customers</div>
-      <div class="fact"><strong>350+</strong><br>Team Members</div>
-      <div class="fact"><strong>6</strong><br>Cities</div>
-    </div>
-  </section>
-  <footer>
-    © 2025 Key Makerssons Private Limited. | Privacy Policy | Disclaimer
-  </footer>
-</body>
-</html>
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Housiey</title>
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #f2f5f5; color: #223a53; }
-    header { background: #fff; height: 70px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.03); padding: 0 40px; }
-    .logo { height: 38px; }
-    .menu { font-size: 18px; color: #706a68; text-decoration: none; margin-left: 20px; }
-    .contact-section { max-width: 850px; background: #fff; border-radius: 14px; padding: 36px 32px; margin: 50px auto 0 auto; box-shadow: 0 2px 10px 0 rgba(34,58,83,0.10); }
-    .contact-title { font-size: 27px; font-weight: 700; margin-bottom: 22px; letter-spacing: .7px; text-align: left; }
-    .contact-form { display: flex; flex-direction: column; gap: 17px; }
-    .contact-form label { font-size: 16px; font-weight: 600; margin-bottom: 4px; color: #223a53; }
-    .contact-form input, .contact-form textarea { padding: 12px; border: 1.1px solid #b9c6cd; border-radius: 7px; font-size: 15px; }
-    .contact-form textarea { resize: vertical; min-height: 76px; }
-    .contact-btn { background: #32add9; color: #fff; border: none; border-radius: 6px; padding: 12px 26px; font-size: 16px; font-weight: 600; cursor: pointer; max-width: 150px; transition: background 0.2s; }
-    .contact-btn:hover { background: #114a71; }
-    .contact-address { padding: 18px 0 0 0; font-size: 16px; color: #223a53; }
-    .address-title { font-weight: bold; margin-bottom: 6px; }
-    footer { background: #223a53; color: #fff; padding: 26px 0 17px; margin-top: 48px; text-align: center; font-size: 16px; }
-    @media(max-width:700px){ .contact-section{padding:18px 5vw;} .contact-title{font-size:20px;} header{padding: 0 9px;} }
-  </style>
-</head>
-<body>
-  <header>
-    <a href="index.html"><img src="https://ext.same-assets.com/1278354859/2289884721.png" alt="Housiey logo" class="logo"></a>
-    <nav>
-      <a class="menu" href="projects.html">Projects</a>
-      <a class="menu" href="about.html">About Us</a>
-      <a class="menu" href="contact.html">Contact</a>
-      <a class="menu" href="#">Sign Up</a>
-    </nav>
-  </header>
-  <section class="contact-section">
-    <div class="contact-title">Contact Us</div>
-    <form class="contact-form">
-      <div>
-        <label for="name">Name</label><br>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div>
-        <label for="email">Email</label><br>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div>
-        <label for="message">Message</label><br>
-        <textarea id="message" name="message" required></textarea>
-      </div>
-      <button class="contact-btn" type="submit">Send</button>
-    </form>
-    <div class="contact-address">
-      <div class="address-title">Registered & Corporate Office</div>
-      1407 HAUSIEY PRIVATE LIMITED (CIN: U70109MH2020PTC336044)<br>
-      Vasudev Chambers (Opp Nagadevi Stock Archies),<br>
-      East Mumbai Maharashtra - 400080 India
-    </div>
-  </section>
-  <footer>
-    © 2025 Key Makerssons Private Limited. | Privacy Policy | Disclaimer
-  </footer>
-</body>
-</html>
+<div class="city-card"><img class="city-img" src="https://ext.same-assets.com/1278354859/809981740.svg" alt="Pune city icon"><div class="city-name">Pune</div></div>
+          <div class="city-card"><img class="city-img" src="https://ext.same-assets.com/1278354859/1223152466.svg" alt="Mumbai city icon"><div class="city-name">Mumbai</div></div>
+          <div class="city-card"><img class="city-img" src="https://ext.same-assets.com/1278354859/3319134659.svg" alt="Thane city icon"><div class="city-name">Thane</div></div>
+          <div class="city-card"><img class="city-img" src="https://ext.same-assets.com/1278354859/1585673028.svg" alt="Bangalore city icon"><div class="city-name">Bangalore</div></div>
+          <div class="city-card"><img class="city-img" src="https://ext.same-assets.com/1278354859/809981740.svg" alt="Ahmedabad city icon"><div class="city-name">Ahmedabad</div></div>
+          <div class="city-card"><img class="city-img" src="https://ext.same-assets.com/1278354859/2652140977.svg" alt="Hyderabad city icon"><div class="city-name">Hyderabad</div></div>
+          <div class="city-card"><img class="city-img" src="https://ext.same-assets.com/1278354859/1223152466.svg" alt="Gurugram city icon"><div class="city-name">Gurugram</div></div>
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects - Housiey</title>
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #f2f5f5; color: #223a53; }
-    header { background: #fff; height: 70px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.03); padding: 0 40px; }
-    .logo { height: 38px; }
-    .menu { font-size: 18px; color: #706a68; text-decoration: none; margin-left: 20px; }
-    .projects-section { max-width: 1200px; margin: 38px auto 0 auto; }
-    .projects-title { font-size: 27px; font-weight: 700; margin-bottom: 18px; letter-spacing: .7px; text-align: center; }
-    .projects-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
-    .project-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 10px 0 rgba(34,58,83,0.11); width: 325px; min-height: 250px; display: flex; flex-direction: column; align-items: center; padding: 24px 20px; text-align: center; transition: box-shadow .2s; }
-    .project-card:hover { box-shadow: 0 8px 20px 0 rgba(50, 173, 217, .17); }
-    .project-img { width: 72px; height: 72px; margin-bottom: 16px; }
-    .project-name { font-size: 20px; font-weight: bold; margin-bottom: 9px; color: #223a53; }
-    .project-location { font-size: 16px; color: #708f96; margin-bottom: 6px; }
-    .project-info { font-size: 15px; color: #706a68; }
-    footer { background: #223a53; color: #fff; padding: 26px 0 17px; margin-top: 48px; text-align: center; font-size: 16px; }
-    @media(max-width:700px) {
-      .projects-grid { flex-direction: column; align-items: center; }
-      .project-card { width: 90vw; }
-      header { padding: 0 9px; }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <a href="index.html"><img src="https://ext.same-assets.com/1278354859/2289884721.png" alt="Housiey logo" class="logo"></a>
-    <nav>
-      <a class="menu" href="projects.html">Projects</a>
-      <a class="menu" href="about.html">About Us</a>
-      <a class="menu" href="contact.html">Contact</a>
-      <a class="menu" href="#">Sign Up</a>
-    </nav>
-  </header>
-  <section class="projects-section">
-    <div class="projects-title">Our Top Projects</div>
-    <div class="projects-grid">
-      <div class="project-card">
-        <img class="project-img" src="https://ext.same-assets.com/1278354859/809981740.svg" alt="Project 1">
-        <div class="project-name">Castle View Residences</div>
-        <div class="project-location">Mumbai</div>
-        <div class="project-info">2 & 3 BHK luxury apartments, amenities, great location, builder: Sun Estates.</div>
-      </div>
-      <div class="project-card">
-        <img class="project-img" src="https://ext.same-assets.com/1278354859/2652140977.svg" alt="Project 2">
-        <div class="project-name">Greenwood Towers</div>
-        <div class="project-location">Pune</div>
-        <div class="project-info">Spacious flats, clubhouse, garden view, builder: Cityline Constructions.</div>
-      </div>
-      <div class="project-card">
-        <img class="project-img" src="https://ext.same-assets.com/1278354859/1223152466.svg" alt="Project 3">
-        <div class="project-name">Lakefront Enclave</div>
-        <div class="project-location">Bangalore</div>
-        <div class="project-info">Premium homes with lakeside amenities, builder: Prestige Living.</div>
-      </div>
-      <div class="project-card">
-        <img class="project-img" src="https://ext.same-assets.com/1278354859/1585673028.svg" alt="Project 4">
-        <div class="project-name">Hyde Park Heights</div>
-        <div class="project-location">Thane</div>
-        <div class="project-info">Comfort apartments, pool & gym, metro proximity, builder: Royal Habitat.</div>
-      </div>
-    </div>
-  </section>
-  <footer>
-    © 2025 Key Makerssons Private Limited. | Privacy Policy | Disclaimer
-  </footer>
-</body>
-</html>
+
+
+
+
+
+
+
+
+.sign-up-perks-section {
+  background: linear-gradient(to right, #fff3e0, #ffe0b2); /* light orange gradient */
+  padding: 50px 20px;
+  text-align: center;

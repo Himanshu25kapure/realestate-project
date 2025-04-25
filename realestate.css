@@ -76,7 +76,8 @@ h2 {
 
 /* === Hero Section === */
 .hero {
-  background: linear-gradient(135deg, #007bffdd, #00ccccdd), url('https://via.placeholder.com/1600x800') no-repeat center center/cover;
+  background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20231227/pngtree-real-estate-landing-page-with-stunning-gradient-texture-image_13879867.png');
+  background-size: cover;
   padding: 4rem 2rem;
   text-align: center;
   color: white;
@@ -299,57 +300,7 @@ body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f8f9fa;
-  color: #333;
-}
-
-/* Cities Popup Section */
-.cities-popup {
-  padding: 40px 20px;
-  background-color: #ffffff;
-  text-align: center;
-}
-
-.cities-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-
-.cities-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.city-card {
-  background-color: #f1f1f1;
-  border-radius: 12px;
-  padding: 20px;
-  width: 120px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.city-card:hover {
-  transform: scale(1.05);
-  background-color: #e0e0e0;
-}
-
-.city-img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
-}
-
-.city-name {
-  font-size: 16px;
-  font-weight: 500;
-}
-
+  color: #333;}
 /* Sign Up Perks Section */
 .sign-up-perks-section {
   background-color: #fdfdfd;
@@ -467,17 +418,13 @@ body {
   }
 }
 /* Cities Popup Section with Background Color */
-.cities-popup {
-  padding: 40px 20px;
-  background: linear-gradient(to right, #e3f2fd, #bbdefb); /* light blue gradient */
-  text-align: center;
-}
+
 
 .cities-title {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 30px;
-  color: #0d47a1; /* deep blue */
+  color: #1c070c; /* deep blue */
 }
 
 /* Sign Up Perks Section with Background Color */
@@ -573,29 +520,7 @@ body {
 }
 
 
-/* === Premium Horizontal Banner Section === */
-.banner-wrapper {
-  position: relative;
-  width: 100%;
-  height: 280px;
-  margin: 40px 0;
-  overflow: hidden;
-  border-radius: 1px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: #000;
-}
-
-.banner-img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.5);
-  z-index: 1;
-}
-
+/* Banner Section */
 .banner-text {
   position: relative;
   z-index: 2;
@@ -1008,33 +933,3 @@ body {
   cursor: pointer;
 }
 
-
-
-/* Icons */
-
-.fa-instagram {
-  
-  color: white;
-}
-
-.social-icons{
-  margin: 20px;
-  font-size: 30px;
-  width: 50px;
-  
-
-}
-.fa {
-  padding: 20px;
-  /* font-size: 30px;
-  width: 50px; */
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-}
-
-/* propDetails Image */
-
-.image-container{
-  border-radius: 6px;
-}
