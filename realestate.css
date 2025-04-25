@@ -572,6 +572,7 @@ body {
 
 }
 
+
 /* === Premium Horizontal Banner Section === */
 .banner-wrapper {
   position: relative;
@@ -1007,3 +1008,33 @@ body {
   cursor: pointer;
 }
 
+
+
+/* Icons */
+
+.fa-instagram {
+  
+  color: white;
+}
+
+.social-icons{
+  margin: 20px;
+  font-size: 30px;
+  width: 50px;
+  
+
+}
+.fa {
+  padding: 20px;
+  /* font-size: 30px;
+  width: 50px; */
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+/* propDetails Image */
+
+.image-container{
+  border-radius: 6px;
+}
