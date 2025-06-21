@@ -10,3 +10,12 @@ node js and express js
 
 database:
 postgre sql
+
+step:
+
+1. need to create admin page, all property details saved in database
+2. User registration and login saved in database
+3. contact us working 
+4. search bar working with filters
+5. footer content working
+6. Book Site Visit working using ejs with database
