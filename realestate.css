@@ -397,11 +397,20 @@ body {
   background-color: #0056b3;
 }
 
+.cities-popup{
+  background: linear-gradient(to right, #d1e8f9, #d1e8f9); /* light orange gradient */
+  padding: 50px 20px;
+  text-align: center;
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .perks-row, .cities-list {
       flex-direction: column;
       align-items: center;
+      background-color: white;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem;
   }
 
   .perk-card, .city-card {
@@ -933,3 +942,23 @@ body {
   cursor: pointer;
 }
 
+
+
+/* modifies css */
+.cities-list {
+  display: flex;
+  flex-wrap: wrap; /* allows wrapping if too many cities */
+  gap: 20px; /* space between city cards */
+  justify-content: center; /* centers the row horizontally */
+}
+
+.city-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 160px;
+}
+
+.city-img{
+height: 92px;}
