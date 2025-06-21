@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Property - Admin</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 50px 20px;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      resize: vertical;
+    }
+
+    textarea {
+      min-height: 100px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #28a745;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    select {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0 15px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 15px;
+        background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <form method="POST" action="/admin/add-property">
+    <h2>Add New Property</h2>
+    <input type="text" name="title" placeholder="Title" required />
+    <input type="text" name="location" placeholder="Location" required />
+    <input type="text" name="image_url" placeholder="Image URL" required />
+    <input type="text" name="Price" placeholder="Price" required />
+    <select name="category" required>
+        <option value="" disabled selected>Select Category</option>
+        <option value="Apartment">Apartment</option>
+        <option value="Duplex">Duplex</option>
+        <option value="Independent House">Independent House</option>
+    </select>
+    <textarea name="description" placeholder="Description" required></textarea>
+    <input type="text" name="rera_no" placeholder="RERA No." />
+    <input type="text" name="carpet_area" placeholder="Carpet Area" />
+    <input type="text" name="configuration" placeholder="Configuration (e.g., 2BHK)" />
+    <input type="text" name="possession" placeholder="Possession Date" />
+    <input type="text" name="video_url" placeholder="YouTube Embed URL" />
+    <input type="text" name="map_embed" placeholder="Google Maps Embed URL" />
+    <button type="submit">Add Property</button>
+  </form>
+</body>
+</html>
