@@ -4,3 +4,9 @@ contact us page
 search bar working with filters
 footer content working
 Book Site Visit working
+
+tools: 
+node js and express js
+
+database:
+postgre sql
