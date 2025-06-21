@@ -1,1 +1,6 @@
-Database
+Registrartion & Login System (Database required)
+each property need its own content
+contact us page
+search bar working with filters
+footer content working
+Book Site Visit working
