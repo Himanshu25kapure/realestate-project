@@ -43,12 +43,14 @@ router.get('/:id', async (req, res) => {
 });
 
 // ✅ Handle Admin Add Property Form Submission
+// ✅ Handle Admin Add Property Form Submission
 router.post('/add', async (req, res) => {
     const {
         title,
         location,
         image_url,
         price,
+        city,
         category,
         description,
         rera_no,
@@ -56,20 +58,25 @@ router.post('/add', async (req, res) => {
         configuration,
         possession,
         video_url,
-        map_embed
+        map_embed,
+        bedrooms,
+        bathrooms,
+        furnishing,
+        floorplan_url
     } = req.body;
 
     try {
         await pool.query(
             `INSERT INTO properties 
-      (title, location, image_url, price, category, description, rera_no, carpet_area, configuration, possession, video_url, map_embed) 
-      VALUES 
-      ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
+        (title, location, image_url, price, category, description, rera_no, carpet_area, configuration, possession, video_url, map_embed, bedrooms, bathrooms, furnishing, floorplan_url) 
+       VALUES 
+        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16)`,
             [
                 title,
                 location,
                 image_url,
                 price,
+                city,
                 category,
                 description,
                 rera_no,
@@ -77,7 +84,11 @@ router.post('/add', async (req, res) => {
                 configuration,
                 possession,
                 video_url,
-                map_embed
+                map_embed,
+                bedrooms,
+                bathrooms,
+                furnishing,
+                floorplan_url
             ]
         );
         res.redirect('/properties');
@@ -85,5 +96,6 @@ router.post('/add', async (req, res) => {
         res.status(500).send(err.message);
     }
 });
+
 
 module.exports = router;

@@ -28,15 +28,53 @@ router.get('/dashboard', (req, res) => {
 
 // Handle add property
 router.post('/add-property', async (req, res) => {
-    const { title, location, image_url, price, category, description, rera_no, carpet_area, configuration, possession, video_url, map_embed } = req.body;
+    const {
+        title,
+        location,
+        image_url,
+        price,
+        city,
+        category,
+        description,
+        rera_no,
+        carpet_area,
+        configuration,
+        possession,
+        video_url,
+        map_embed,
+        bedrooms,
+        bathrooms,
+        furnishing,
+        floorplan_url
+    } = req.body;
+
     try {
         await pool.query(
             `INSERT INTO properties 
-      (title, location, image_url, price, category, description, rera_no, carpet_area, configuration, possession, video_url, map_embed) 
-      VALUES 
-      ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)`,
-            [title, location, image_url, price, category, description, rera_no, carpet_area, configuration, possession, video_url, map_embed]
+        (title, location, image_url, price, city, category, description, rera_no, carpet_area, configuration, possession, video_url, map_embed, bedrooms, bathrooms, furnishing, floorplan_url) 
+        VALUES 
+        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17)`,
+            [
+                title,
+                location,
+                image_url,
+                price,
+                city,                // ✅ added here
+                category,
+                description,
+                rera_no,
+                carpet_area,
+                configuration,
+                possession,
+                video_url,
+                map_embed,
+                bedrooms,
+                bathrooms,
+                furnishing,
+                floorplan_url
+            ]
         );
+
         res.redirect('/admin/dashboard');
     } catch (err) {
         res.status(500).send(err.message);

@@ -86,6 +86,7 @@
     <input type="text" name="location" placeholder="Location" required />
     <input type="text" name="image_url" placeholder="Image URL" required />
     <input type="text" name="price" placeholder="Price" required />
+    <input type="text" name="city" placeholder="City" required />
     <select name="category" required>
         <option value="" disabled selected>Select Category</option>
         <option value="Apartment">Apartment</option>
@@ -97,6 +98,24 @@
     <input type="text" name="carpet_area" placeholder="Carpet Area" />
     <input type="text" name="configuration" placeholder="Configuration (e.g., 2BHK)" />
     <input type="text" name="possession" placeholder="Possession Date" />
+
+    <!-- 🆕 Bedrooms -->
+    <input type="number" name="bedrooms" placeholder="No. of Bedrooms" required />
+
+    <!-- 🆕 Bathrooms -->
+    <input type="number" name="bathrooms" placeholder="No. of Bathrooms" required />
+
+    <!-- 🆕 Furnishing Type -->
+    <select name="furnishing" required>
+      <option value="" disabled selected>Select Furnishing Type</option>
+      <option value="Furnished">Furnished</option>
+      <option value="Semi-Furnished">Semi-Furnished</option>
+      <option value="Unfurnished">Unfurnished</option>
+    </select>
+
+    <!-- 🆕 Floor Plan Image URL -->
+    <input type="text" name="floorplan_url" placeholder="Floor Plan Image URL (optional)" />
+
     <input type="text" name="video_url" placeholder="YouTube Embed URL" />
     <input type="text" name="map_embed" placeholder="Google Maps Embed URL" />
     <button type="submit">Add Property</button>
