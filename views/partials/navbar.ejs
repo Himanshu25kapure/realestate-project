@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <div class="logo">🏠 Real Estate</div>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <% if (user) { %>
+      <li><a href="#"><i class="fa fa-user"></i> <%= user.email %></a></li>
+      <li><a href="/logout">Logout</a></li>
+    <% } else { %>
+      <li><a href="/login">Login</a></li>
+    <% } %>
+  </ul>
+</nav> 

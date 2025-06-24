@@ -10,24 +10,17 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="logo">🏠 Real Estate</div>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/login">Login</a></li>
-        </ul>
-    </nav>
+    <%- include('partials/navbar') %>
+    <% if (success && success.length) { %>
+        <p style="color:green;text-align:center;"><%= success %></p>
+    <% } %>
+    <% if (error && error.length) { %>
+        <p style="color:red;text-align:center;"><%= error %></p>
+    <% } %>
 
     <main class="contact" role="main">
         <h2>Contact Us</h2>
-        <p>Have any questions or want to inquire about a property? Reach out to us, and we’ll be happy to assist you.</p>
+        <p>Have any questions or want to inquire about a property? Reach out to us, and we'll be happy to assist you.</p>
         <p>Feel free to fill out the contact form below or use the contact details provided.</p>
 
         <form class="contact-form">

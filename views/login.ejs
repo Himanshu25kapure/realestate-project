@@ -10,32 +10,26 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="logo">🏠 Real Estate</div>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/login">Login</a></li>
-        </ul>
-    </nav>
+    <%- include('partials/navbar') %>
 
     <main class="auth" role="main">
         <h2>Login</h2>
         <p>Welcome back! Please enter your credentials to access your account.</p>
         
-        <form action="#" method="POST" class="auth-form">
+        <% if (success && success.length) { %>
+            <p style="color:green;"><%= success %></p>
+        <% } %>
+        <% if (error && error.length) { %>
+            <p style="color:red;"><%= error %></p>
+        <% } %>
+        
+        <form action="/login" method="POST" class="auth-form">
             <input type="email" name="email" placeholder="Email Address" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
         
-        <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+        <p>Don't have an account? <a href="/register">Sign up here</a></p>
     </main>
 
     <!-- Footer Section -->

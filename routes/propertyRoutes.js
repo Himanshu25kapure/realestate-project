@@ -14,13 +14,41 @@ router.get('/all', async (req, res) => {
 
 // ✅ Render Homepage with All or Filtered by City
 router.get('/', async (req, res) => {
-    const { city } = req.query;
-    try {
-        const result = city
-            ? await pool.query('SELECT * FROM properties WHERE city = $1', [city])
-            : await pool.query('SELECT * FROM properties');
+    const { city, q, price, sort } = req.query;
+    let query = 'SELECT * FROM properties';
+    let params = [];
+    let conditions = [];
 
-        res.render('index', { properties: result.rows });
+    if (city) {
+        conditions.push('city = $' + (params.length + 1));
+        params.push(city);
+    }
+    if (q) {
+        conditions.push('(title ILIKE $' + (params.length + 1) + ' OR location ILIKE $' + (params.length + 1) + ')');
+        params.push(`%${q}%`);
+    }
+    if (price) {
+        if (price === 'low') {
+            conditions.push('CAST(price AS INTEGER) < 5000000');
+        } else if (price === 'mid') {
+            conditions.push('CAST(price AS INTEGER) >= 5000000 AND CAST(price AS INTEGER) <= 10000000');
+        } else if (price === 'high') {
+            conditions.push('CAST(price AS INTEGER) > 10000000');
+        }
+    }
+    if (conditions.length) {
+        query += ' WHERE ' + conditions.join(' AND ');
+    }
+    if (sort) {
+        if (sort === 'low') {
+            query += ' ORDER BY CAST(price AS INTEGER) ASC';
+        } else if (sort === 'high') {
+            query += ' ORDER BY CAST(price AS INTEGER) DESC';
+        }
+    }
+    try {
+        const result = await pool.query(query, params);
+        res.render('index', { properties: result.rows, user: res.locals.user, q, price, sort });
     } catch (err) {
         res.status(500).send('Server Error');
     }

@@ -7,15 +7,13 @@
     <link rel="stylesheet" href="/realestate.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">🏠 Real Estate</div>
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/login">Login</a></li>
-        </ul>
-    </nav>
+    <% if (success && success.length) { %>
+        <p style="color:green;text-align:center;"><%= success %></p>
+    <% } %>
+    <% if (error && error.length) { %>
+        <p style="color:red;text-align:center;"><%= error %></p>
+    <% } %>
+    <%- include('partials/navbar') %>
 
     <section id="about" class="about">
         <h2>About Us</h2>

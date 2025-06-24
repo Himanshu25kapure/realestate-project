@@ -11,32 +11,45 @@
     />
   </head>
   <body>
-    <nav class="navbar">
-      <div class="logo">🏠 Real Estate</div>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact"">Contact</a></li>
-        <li><a href="/login"">Login</a></li>
-      </ul>
-    </nav>
+    <% if (success && success.length) { %>
+      <p style="color:green;text-align:center;"><%= success %></p>
+    <% } %>
+    <% if (error && error.length) { %>
+      <p style="color:red;text-align:center;"><%= error %></p>
+    <% } %>
+    <%- include('partials/navbar') %>
 
     <section class="hero">
         <h1>Find Your Dream Property</h1>
-        <input type="text" id="search-input" class="search-bar" placeholder="Search project, locality or builder...">
-        
-        <div class="filters">
-            <select>
-                <option value="">All Prices</option>
-                <option value="low">Below ₹50L</option>
-                <option value="mid">₹50L - ₹1Cr</option>
-                <option value="high">Above ₹1Cr</option>
+        <form method="GET" action="/properties" class="search-form">
+          <input type="text" name="q" class="search-bar" placeholder="Search project, locality or builder..." value="<%= typeof q !== 'undefined' ? q : '' %>">
+          <div class="filters">
+            <select name="price">
+                <option value="" <%= !price ? 'selected' : '' %>>All Prices</option>
+                <option value="low" <%= price === 'low' ? 'selected' : '' %>>Below ₹50L</option>
+                <option value="mid" <%= price === 'mid' ? 'selected' : '' %>>₹50L - ₹1Cr</option>
+                <option value="high" <%= price === 'high' ? 'selected' : '' %>>Above ₹1Cr</option>
             </select>
-            <select>
-                <option value="low">Low to High</option>
-                <option value="high">High to Low</option>
+            <select name="sort">
+                <option value="low" <%= sort === 'low' ? 'selected' : '' %>>Low to High</option>
+                <option value="high" <%= sort === 'high' ? 'selected' : '' %>>High to Low</option>
             </select>
-        </div>
+          </div>
+          <button type="submit" style="
+            background-color: #fff;
+            color: rgb(2, 2, 2);
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          ">
+            Search
+          </button>
+        </form>
     </section>
     
     <!-- Apartments Section -->
